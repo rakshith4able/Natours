@@ -47,3 +47,27 @@ body{
 .logo{
     height: 35px;
 }
+
+/* Styling Heading
+- used spans to split h1 in to 2 lines
+- by default spans will be inline make it block
+*/
+
+.heading-primary{
+    color: white;
+    text-transform: uppercase;
+}
+
+.heading-primary-main{
+    display: block;
+    font-size: 60px;
+    font-weight: 400;
+    letter-spacing: 35px;
+}
+
+.heading-primary-sub{
+    display: block;
+    font-size: 20px;
+    font-weight: 700;
+    letter-spacing: 17.4px;
+}
