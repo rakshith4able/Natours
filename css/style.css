@@ -27,4 +27,7 @@ body{
     background-image: linear-gradient(to right bottom,#7ed56fc5,#28b485c5) ,url(../img/hero.jpg) ;
     background-size: cover;
     background-position:top;
+    /* clip path is given with polygon with x y positions of vertices in clockwise direction */
+    /* We can search online to get clip path maker code */
+    clip-path: polygon(0 0,100% 0,100% 75vh, 0 100%);
 }
