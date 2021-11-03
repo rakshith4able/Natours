@@ -30,4 +30,20 @@ body{
     /* clip path is given with polygon with x y positions of vertices in clockwise direction */
     /* We can search online to get clip path maker code */
     clip-path: polygon(0 0,100% 0,100% 75vh, 0 100%);
+    position: relative;
+}
+
+/* Styling Logo 
+-Since img is inline element it is best practice to make it present inside a div 
+-and we can use absolute positioning with parent set to relative and use top and left to position 
+-we can set height of the image and width automatically scales */
+
+.logo-box{
+    position: absolute;
+    top: 40px;
+    left: 40px;
+}
+
+.logo{
+    height: 35px;
 }
