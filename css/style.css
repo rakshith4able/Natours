@@ -86,6 +86,7 @@ Centering h1
     animation-duration: 1s;
     animation-timing-function: ease-out; */
     animation:moveInRight 1s ease-out;
+    margin-bottom: 100px;
 }
 
 .text-box{
@@ -93,6 +94,7 @@ Centering h1
     top: 50%;
     left: 50%;
     transform: translate(-50%,-50%);
+    text-align: center;
 }
 /* Animations in CSS
 -generally 2 types
@@ -156,6 +158,31 @@ if animations are shaky we can set parent element backface-visibility:hidden;
         opacity: 1;
         transform: translateX(0);
     }
+}
+
+.btn:link, 
+.btn:visited{
+        text-transform: uppercase;
+        text-decoration: none;
+        padding: 15px 40px;
+        display: inline-block;
+        border-radius: 100px;
+        transition: all .2s;
+}
+
+.btn:hover{
+        transform: translateY(-3px);
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.btn:active{
+        transform: translateY(-1px);
+        box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+}
+
+.btn-white{
+        background-color: #fff;
+        color: #777;
 }
 
 
