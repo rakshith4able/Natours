@@ -51,6 +51,13 @@ body{
 /* Styling Heading
 - used spans to split h1 in to 2 lines
 - by default spans will be inline make it block
+
+Centering h1 
+-Wrap heading with a div with some class
+-set position absolute and top,left =50%
+-This starts the box at 50% width and height
+-So we have to translate back width to 50% of the content width 
+- and height to 50% of the content height using transform
 */
 
 .heading-primary{
@@ -70,4 +77,11 @@ body{
     font-size: 20px;
     font-weight: 700;
     letter-spacing: 17.4px;
+}
+
+.text-box{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
 }
