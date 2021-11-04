@@ -46,14 +46,23 @@ body{
 -and we can use absolute positioning with parent set to relative and use top and left to position 
 -we can set height of the image and width automatically scales */
 
-.logo-box{
+.header__logo-box{
     position: absolute;
     top: 4rem;
     left: 4rem;
 }
 
-.logo{
+.header__logo{
     height: 3rem;
+}
+
+
+.header__text-box{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    text-align: center;
 }
 
 /* Styling Heading
@@ -74,7 +83,7 @@ Centering h1
     backface-visibility: hidden;
 }
 
-.heading-primary-main{
+.heading-primary--main{
     display: block;
     font-size: 6rem;
     font-weight: 400;
@@ -85,7 +94,7 @@ Centering h1
     animation-timing-function: ease-out;
 }
 
-.heading-primary-sub{
+.heading-primary--sub{
     display: block;
     font-size: 2rem;
     font-weight: 700;
@@ -97,13 +106,6 @@ Centering h1
     margin-bottom: 10rem;
 }
 
-.text-box{
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%,-50%);
-    text-align: center;
-}
 /* Animations in CSS
 -generally 2 types
 -1. Using transition property and animate on event eg.on hover
@@ -220,7 +222,7 @@ if animations are shaky we can set parent element backface-visibility:hidden;
     transition: all .4s;
 }
 
-.btn-white::after{
+.btn--white::after{
     background-color: #fff;
 }
 
@@ -230,7 +232,7 @@ if animations are shaky we can set parent element backface-visibility:hidden;
     opacity: 0;
 }
 
-.btn-animated{
+.btn--animated{
     animation:moveInBottom .5s ease-out .75s;
     animation-fill-mode: backwards;
 }
