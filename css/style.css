@@ -5,7 +5,6 @@
   padding: 0;
   box-sizing: inherit; }
 
-/* To change px to rem we have to set root element font size */
 html {
   font-size: 62.5%; }
 
@@ -23,98 +22,41 @@ body {
   background-image: linear-gradient(to right bottom, rgba(126, 213, 111, 0.8), rgba(40, 180, 133, 0.8)), url(../img/hero.jpg);
   background-size: cover;
   background-position: top;
-  /* clip path is given with polygon with x y positions of vertices in clockwise direction */
-  /* We can search online to get clip path maker code */
   clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
   position: relative; }
+  .header__logo-box {
+    position: absolute;
+    top: 4rem;
+    left: 4rem; }
+  .header__logo {
+    height: 3rem; }
+  .header__text-box {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center; }
 
-/* Styling Logo 
--Since img is inline element it is best practice to make it present inside a div 
--and we can use absolute positioning with parent set to relative and use top and left to position 
--we can set height of the image and width automatically scales */
-.header__logo-box {
-  position: absolute;
-  top: 4rem;
-  left: 4rem; }
-
-.header__logo {
-  height: 3rem; }
-
-.header__text-box {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  text-align: center; }
-
-/* Styling Heading
-- used spans to split h1 in to 2 lines
-- by default spans will be inline make it block
-
-Centering h1 
--Wrap heading with a div with some class
--set position absolute and top,left =50%
--This starts the box at 50% width and height
--So we have to translate back width to 50% of the content width 
-- and height to 50% of the content height using transform
-*/
 .heading-primary {
   color: white;
   text-transform: uppercase;
   backface-visibility: hidden; }
-
-.heading-primary--main {
-  display: block;
-  font-size: 6rem;
-  font-weight: 400;
-  letter-spacing: 3.5rem;
-  animation-name: moveInLeft;
-  animation-duration: 1s;
-  /* animation-iteration-count: 3; */
-  animation-timing-function: ease-out; }
-
-.heading-primary--sub {
-  display: block;
-  font-size: 2rem;
-  font-weight: 700;
-  letter-spacing: 1.75rem;
-  /* animation-name: moveInRight;
+  .heading-primary--main {
+    display: block;
+    font-size: 6rem;
+    font-weight: 400;
+    letter-spacing: 3.5rem;
+    animation-name: moveInLeft;
     animation-duration: 1s;
-    animation-timing-function: ease-out; */
-  animation: moveInRight 1s ease-out;
-  margin-bottom: 10rem; }
+    animation-timing-function: ease-out; }
+  .heading-primary--sub {
+    display: block;
+    font-size: 2rem;
+    font-weight: 700;
+    letter-spacing: 1.75rem;
+    animation: moveInRight 1s ease-out;
+    margin-bottom: 10rem; }
 
-/* Animations in CSS
--generally 2 types
--1. Using transition property and animate on event eg.on hover
--2. Using keyframes-
-
-Syntax: 
-@keyframes animation_name{
-    start%{
-        //properties
-    }
-
-    middle%{
-        //properties      
-    }
-
-    finish%{
-        //properties
-    }
-
-}
-
-set  properties accordingly
-animation-name:animationName; 
-animation-duration:duration;
-animation-delay:duration;
-animation-iteration-count:count;
-animation-timing-function:keyword;
-or use shorthand animation:...;
-
-if animations are shaky we can set parent element backface-visibility:hidden;
-*/
 @keyframes moveInLeft {
   0% {
     opacity: 0;
@@ -143,8 +85,7 @@ if animations are shaky we can set parent element backface-visibility:hidden;
     opacity: 1;
     transform: translate(0); } }
 
-.btn:link,
-.btn:visited {
+.btn:link, .btn:visited {
   text-transform: uppercase;
   text-decoration: none;
   padding: 1.5rem 4rem;
@@ -156,6 +97,9 @@ if animations are shaky we can set parent element backface-visibility:hidden;
 .btn:hover {
   transform: translateY(-0.3rem);
   box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2); }
+  .btn:hover::after {
+    transform: scaleX(1.4) scaleY(1.6);
+    opacity: 0; }
 
 .btn:active {
   transform: translateY(-0.1rem);
@@ -164,6 +108,8 @@ if animations are shaky we can set parent element backface-visibility:hidden;
 .btn--white {
   background-color: #fff;
   color: #777; }
+  .btn--white::after {
+    background-color: #fff; }
 
 .btn::after {
   content: "";
@@ -176,13 +122,6 @@ if animations are shaky we can set parent element backface-visibility:hidden;
   left: 0;
   z-index: -1;
   transition: all .4s; }
-
-.btn--white::after {
-  background-color: #fff; }
-
-.btn:hover::after {
-  transform: scaleX(1.4) scaleY(1.6);
-  opacity: 0; }
 
 .btn--animated {
   animation: moveInBottom .5s ease-out .75s;
